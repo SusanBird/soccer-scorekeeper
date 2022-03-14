@@ -31,33 +31,38 @@ nameFormButton.addEventListener('click', (e) => {
     teamTwoLabel.textContent = '';
 
     // refresh the current game element with new data by calling the appropriate function
-    const 
+    
+    displayCurrentGameEl();
 
 });
 
 
 teamOneAddButton.addEventListener('click', () => {
     // increment the current state for team one's score
-    
+    score1++;
     // refresh the current game element with new data by calling the appropriate function
+    displayCurrentGameEl();
 });
 
 teamTwoAddButton.addEventListener('click', () => {
     // increment the current state for team two's score
-
+    score2++;
     // refresh the current game element with new data by calling the appropriate function
+    displayCurrentGameEl();
 });
 
 teamOneSubtractButton.addEventListener('click', () => {
     // decrement the current state for team one's score
-
+    score1--;
     // refresh the current game element with new data by calling the appropriate function
+    displayCurrentGameEl();
 });
 
 teamTwoSubtractButton.addEventListener('click', () => {
     // decrement the current state for team two's score
-
+    score2--;
     // refresh the current game element with new data by calling the appropriate function
+    displayCurrentGameEl();
 });
 
 finishGameButton.addEventListener('click', () => {
@@ -88,7 +93,6 @@ function displayCurrentGameEl() {
 
     const gameEl = renderGame(name1, name2, score1, score2);
 
-    
     gameEl.classList.add('current');
 
     currentGameEl.append(gameEl);
