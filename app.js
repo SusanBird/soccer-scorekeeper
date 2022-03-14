@@ -31,6 +31,8 @@ nameFormButton.addEventListener('click', (e) => {
     teamTwoLabel.textContent = '';
 
     // refresh the current game element with new data by calling the appropriate function
+    const 
+
 });
 
 
@@ -73,7 +75,7 @@ finishGameButton.addEventListener('click', () => {
     // refresh the current game element with new data by calling the appropriate function
 });
 
-function refreshCurrentGameEl() {
+function displayCurrentGameEl() {
     currentGameEl.textContent = '';
 
     teamOneLabel.textContent = name1;
@@ -83,6 +85,9 @@ function refreshCurrentGameEl() {
     // make a new gameEl here by calling renderGame with the appropriate arguments. 
     // Check the renderGame function declaration in render-utils.js to figure out the correct arguments to pass to this function 
     // In render-utils.js as yourself: How many arguments does the function take? What order does it take them in?
+
+    const gameEl = renderGame(name1, name2, score1, score2);
+
     
     gameEl.classList.add('current');
 
