@@ -14,6 +14,8 @@ const teamTwoLabel = document.getElementById('team-two-name');
 
 // create an array to hold on to the state of past games
 
+pastGamesEl.push[{name1: name1, name2: name2 ,score1: score1, score2: score2}];
+
 let name1 = '';
 let name2 = '';
 let score1 = 0;
@@ -73,6 +75,9 @@ finishGameButton.addEventListener('click', () => {
     // then push it to your array in state
     // (be sure to make a new object. do not declare the object in global scope and mutate it for reuse. This would cause difficult bugs)
     
+    
+
+
     displayAllGames();
 
     // reset the state to zero and empty strings
@@ -101,8 +106,10 @@ function displayCurrentGameEl() {
 
 function displayAllGames() {
     // clear out the past games list in the DOM
-
+    pastGamesEl.textContent = '';
     // loop through the past games in state
     // use the renderGame function to render and append a past game for each past game in state
     // again, review the renderGame function in render-utils.js. How many arguments does it take? What order does it take them in?
+
+    for 
 }
