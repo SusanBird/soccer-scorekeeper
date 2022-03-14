@@ -27,6 +27,8 @@ nameFormButton.addEventListener('click', (e) => {
     name2 = teamTwoLabel.value;
 
     // reset the form values
+    teamOneLabel.textContent = '';
+    teamTwoLabel.textContent = '';
 
     // refresh the current game element with new data by calling the appropriate function
 });
