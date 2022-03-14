@@ -14,7 +14,7 @@ const teamTwoLabel = document.getElementById('team-two-name');
 
 // create an array to hold on to the state of past games
 
-pastGamesEl.push[{name1: name1, name2: name2 ,score1: score1, score2: score2}];
+const pastGames = [];
 
 let name1 = '';
 let name2 = '';
@@ -23,20 +23,23 @@ let score2 = 0;
 
 nameFormButton.addEventListener('click', (e) => {
     // get the name data from the form
+    const teamOneText = document.querySelector('#team-one');
+    const teamTwoText = document.querySelector('#team-two');
 
     // set the state to this data from the form
-    name1 = teamOneLabel.value;
-    name2 = teamTwoLabel.value;
+    name1 = teamOneText.value;
+    name2 = teamTwoText.value;
 
     // reset the form values
-    teamOneLabel.textContent = '';
-    teamTwoLabel.textContent = '';
+    teamOneText.textContent = '';           //.value instead of textContent?
+    teamTwoText.textContent = '';
 
     // refresh the current game element with new data by calling the appropriate function
-    
     displayCurrentGameEl();
 
 });
+
+//const pastGamesEl.push[{name1: name1, name2: name2 ,score1: score1, score2: score2}];
 
 
 teamOneAddButton.addEventListener('click', () => {
