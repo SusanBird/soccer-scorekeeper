@@ -15,7 +15,7 @@ const teamTwoLabel = document.getElementById('team-two-name');
 // create an array to hold on to the state of past games
 
 let name1 = '';
-let name2 =  '';
+let name2 = '';
 let score1 = 0;
 let score2 = 0;
 
@@ -23,6 +23,8 @@ nameFormButton.addEventListener('click', (e) => {
     // get the name data from the form
 
     // set the state to this data from the form
+    name1 = teamOneLabel.value;
+    name2 = teamTwoLabel.value;
 
     // reset the form values
 
@@ -76,7 +78,7 @@ function refreshCurrentGameEl() {
     teamTwoLabel.textContent = name2;
 
     // const gameEl = . . . 
-    // make a new gameEl here by calling renderGame with the approriate arguments. 
+    // make a new gameEl here by calling renderGame with the appropriate arguments. 
     // Check the renderGame function declaration in render-utils.js to figure out the correct arguments to pass to this function 
     // In render-utils.js as yourself: How many arguments does the function take? What order does it take them in?
     
