@@ -21,18 +21,18 @@ let name2 = '';
 let score1 = 0;
 let score2 = 0;
 
-nameFormButton.addEventListener('click', (e) => {
+nameFormButton.addEventListener('click', () => {
     // get the name data from the form
-    const teamOneText = document.querySelector('#team-one');
-    const teamTwoText = document.querySelector('#team-two');
+    const teamOneText = document.querySelector('.team-one');
+    const teamTwoText = document.querySelector('.team-two');
 
     // set the state to this data from the form
     name1 = teamOneText.value;
     name2 = teamTwoText.value;
 
     // reset the form values
-    teamOneText.textContent = '';           //.value instead of textContent?
-    teamTwoText.textContent = '';
+    teamOneText.value = '';           
+    teamTwoText.value = '';
 
     // refresh the current game element with new data by calling the appropriate function
     displayCurrentGameEl();
@@ -76,12 +76,14 @@ finishGameButton.addEventListener('click', () => {
     // then push it to your array in state
     // (be sure to make a new object. do not declare the object in global scope and mutate it for reuse. This would cause difficult bugs)
     
-    let currentGameArr = {name1: name1, name2: name2 ,score1: score1, score2: score2};
+    console.log(pastGames);
+
+    let currentGameArr = { name1: name1, name2: name2, score1: score1, score2: score2 };
     pastGames.push(currentGameArr);
 
     displayAllGames();
 
-    // reset the state to zero and empty strings
+    // // reset the state to zero and empty strings
     
     name1 = '';
     name2 = '';
@@ -119,8 +121,11 @@ function displayAllGames() {
     // again, review the renderGame function in render-utils.js. How many arguments does it take? What order does it take them in?
 
     for (let pastGame of pastGames){
-        const gameEl = renderGame(pastGame.name1, pastGame.name2, pastGame.score1, pastGame.score2);
-        gameEl.classList.add('past');
-        pastGamesEl.append(gameEl);
+        console.log(pastGame);
+        const gameEl1 = renderGame(pastGame.name1, pastGame.name2, pastGame.score1, pastGame.score2);
+
+        gameEl1.classList.add('past');
+
+        pastGamesEl.append(gameEl1);
     }
 }
